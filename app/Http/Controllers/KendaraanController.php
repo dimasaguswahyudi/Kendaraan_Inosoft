@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kendaraan;
-use Illuminate\Http\Request;
 use App\Traits\ReturnResponse;
-use Illuminate\Http\JsonResponse;
 use App\Http\Requests\KendaraanRequest;
 use App\Http\Resources\KendaraanResource;
 use App\Services\Kendaraan\KendaraanService;

@@ -16,12 +16,12 @@ class MobilRepository
     {
         $this->mobil = $mobil;
     }
-    public function getAllMobil()
+    public function index()
     {
-        $data = $this->mobil->get();
+        $data = $this->mobil::all();
         return $data;
     }
-    public function createMobil($request)
+    public function store($request)
     {
         $data = $this->mobil->create($request);
         return $data;

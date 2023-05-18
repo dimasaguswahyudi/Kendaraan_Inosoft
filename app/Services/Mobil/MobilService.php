@@ -12,19 +12,22 @@ class MobilService{
     {
         $this->mobilRepository = $mobilRepository;
     }
-    public function getAllMobil()
+    public function index()
     {
-        return $this->mobilRepository->getAllMobil();
+        return $this->mobilRepository->index();
     }
-    public function createMobil($request)
+    public function store($request)
     {
-        $this->mobilRepository->createMobil($request);
-        return $this->ResReturn(true, "Data Berhasil Ditambah");
+        return $this->mobilRepository->store($request);
     }
     public function updateMobil($request, $mobil)
     {
         $this->mobilRepository->updateMobil($request, $mobil);
         return $this->ResReturn(true, "Data Berhasil Diupdate");
+    }
+    public function destroy($mobil)
+    {
+        return $this->mobilRepository->destroy($mobil);
     }
 }
 

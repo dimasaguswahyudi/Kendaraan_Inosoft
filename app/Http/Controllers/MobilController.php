@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MobilRequest;
+use App\Http\Resources\MobilResource;
 use App\Models\Mobil;
 use App\Services\Mobil\MobilService;
 use Illuminate\Http\JsonResponse;
@@ -17,21 +18,30 @@ class MobilController extends Controller
         $this->mobilService = $mobilService;
     }
 
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json([
-            'data' => $this->mobilService->getAllMobil()
-        ], 200);
+        $data = $this->mobilService->index();
+        return MobilResource::collection($data);
     }
 
-    public function store(MobilRequest $request): JsonResponse
+    public function store(MobilRequest $request)
     {
-        return $this->mobilService->createMobil($request->all());
+        $data = $this->mobilService->store($request->all());
+        return MobilResource::make($data);
     }
 
     public function update(MobilRequest $request, Mobil $mobil): JsonResponse
     {
         return $this->mobilService->updateMobil($request->all(), $mobil);
+    }
+    public function destroy(Mobil $mobil)
+    {
+        try {
+            $this->mobilService->destroy($mobil);
+            return $this->ResReturn(true, "Data Berhasil Dihapus");
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false, "Data Gagal Dihapus");
+        }
     }
 
 }
