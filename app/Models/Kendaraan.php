@@ -6,11 +6,11 @@ use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Relations\HasOne;
 use Jenssegers\Mongodb\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Kendaraan extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $collection = 'kendaraans';
     protected $connection = 'mongodb';
     protected $fillable = [

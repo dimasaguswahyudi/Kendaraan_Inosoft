@@ -22,18 +22,24 @@ class KendaraanController extends Controller
         $data = $this->kendaraanService->getStok();
         return KendaraanResource::collection($data);
     }
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json([
-            'data' => $this->kendaraanService->index()
-        ], 200);
+        $data = $this->kendaraanService->index();
+        return KendaraanResource::collection($data);
     }
-    public function store(KendaraanRequest $request): JsonResponse
+    public function store(KendaraanRequest $request)
     {
-        return $this->kendaraanService->store($request->all());
+        $data = $this->kendaraanService->store($request->all());
+        return KendaraanResource::make($data);
     }
-    public function update(KendaraanRequest $request, Kendaraan $kendaraan): JsonResponse
+    public function update(KendaraanRequest $request, Kendaraan $kendaraan)
     {
-        return $this->kendaraanService->updateKendaraan($request->all(), $kendaraan);
+        $data = $this->kendaraanService->update($request->all(), $kendaraan);
+        return KendaraanResource::make($data);
+    }
+    public function destroy(Kendaraan $kendaraan)
+    {
+        dd($kendaraan);
+        return $this->kendaraanService->destroy($kendaraan);
     }
 }

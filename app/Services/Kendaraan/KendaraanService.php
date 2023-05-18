@@ -27,12 +27,20 @@ class KendaraanService
 
     public function store($request)
     {
-        $this->KendaraanRepository->store($request);
-        return $this->ResReturn(true, "Data Berhasil Ditambah");
+        return $this->KendaraanRepository->store($request);
     }
-    public function updateKendaraan($request, $kendaraan)
+    public function update($request, $kendaraan)
     {
-        $this->KendaraanRepository->updateKendaraan($request, $kendaraan);
-        return $this->ResReturn(true, "Data Berhasil Diupdate");
+        return $this->KendaraanRepository->update($request, $kendaraan);
+    }
+    public function destroy($kendaraan)
+    {
+        $data = $this->KendaraanRepository->destroy($kendaraan);
+        if ($data == true) {
+            return $this->ResReturn(true, "Data Berhasil Dihapus");
+        }
+        else{
+            return $this->ResReturn(false, "Data Gagal Dihapus");
+        }
     }
 }
