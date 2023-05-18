@@ -35,9 +35,22 @@ class KendaraanRepository
         $data = $this->kendaraan->create($request);
         return $data;
     }
-    public function updateKendaraan($request, $kendaraan)
+    public function update($request, $kendaraan)
     {
-        $data = $kendaraan->update($request);
-        return $data;
+        $kendaraan->tahun_keluaran = $request['tahun_keluaran'];
+        $kendaraan->warna = $request['warna'];
+        $kendaraan->harga = $request['harga'];
+        $kendaraan->save();
+        return $kendaraan;
+    }
+    public function destroy($kendaraan)
+    {
+         if ($kendaraan->mobil != null) {
+            $kendaraan->mobil->delete();
+         }
+         else if ($kendaraan->motor != null) {
+            $kendaraan->motor->delete();
+         }
+         return $kendaraan->delete();
     }
 }

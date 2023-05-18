@@ -18,6 +18,7 @@ class CreateKendaraansTable extends Migration
             $collection->string('warna');
             $collection->integer('harga');
             $collection->timestamps();
+            $collection->timestamp('deleted_at')->nullable();
         });
     }
 

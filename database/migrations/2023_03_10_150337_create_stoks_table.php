@@ -29,6 +29,7 @@ class CreateStoksTable extends Migration
 
             $collection->bigInteger('jumlah');
             $collection->timestamps();
+            $collection->timestamp('deleted_at')->nullable();
         });
     }
 
