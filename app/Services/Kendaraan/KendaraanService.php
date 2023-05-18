@@ -20,14 +20,14 @@ class KendaraanService
         return $this->KendaraanRepository->getStok();
     }
 
-    public function getAllKendaraan()
+    public function index()
     {
-        return $this->KendaraanRepository->getAllKendaraan();
+        return $this->KendaraanRepository->index();
     }
 
-    public function createKendaraan($request)
+    public function store($request)
     {
-        $this->KendaraanRepository->createKendaraan($request);
+        $this->KendaraanRepository->store($request);
         return $this->ResReturn(true, "Data Berhasil Ditambah");
     }
     public function updateKendaraan($request, $kendaraan)

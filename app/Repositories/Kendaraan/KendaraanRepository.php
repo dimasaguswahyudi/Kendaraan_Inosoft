@@ -20,19 +20,20 @@ class KendaraanRepository
 
     public function getStok()
     {
-        $data = $this->kendaraan::with('mobil.stok', 'motor.stok')->select('tahun_keluaran', 'warna', 'harga')->get();
+        $data = $this->kendaraan::with('mobil.stok', 'motor.stok')->get();
         return $data;
     }
 
-    public function getAllKendaraan()
+    public function index()
     {
         $data = $this->kendaraan->get();
         return $data;
     }
 
-    public function createKendaraan($request)
+    public function store($request)
     {
-        return $this->kendaraan->create($request);
+        $data = $this->kendaraan->create($request);
+        return $data;
     }
     public function updateKendaraan($request, $kendaraan)
     {

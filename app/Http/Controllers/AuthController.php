@@ -44,7 +44,9 @@ class AuthController extends Controller
      */
     public function me(): JsonResponse
     {
-        return response()->json(auth()->user(), 200);
+        return response()->json([
+            'data' => auth()->user(),
+        ], 200);
     }
 
     /**
