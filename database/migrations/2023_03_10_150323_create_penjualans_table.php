@@ -21,6 +21,7 @@ class CreatePenjualansTable extends Migration
                 ->onUpdate('cascade')->onDelete('restrict');
             $collection->bigInteger('jumlah');
             $collection->timestamps();
+            $collection->timestamp('deleted_at')->nullable();
         });
     }
 

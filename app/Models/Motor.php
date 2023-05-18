@@ -5,10 +5,11 @@ namespace App\Models;
 use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Motor extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $collection = 'motors';
     protected $connection = 'mongodb';
     protected $fillable = [

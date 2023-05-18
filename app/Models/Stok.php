@@ -5,10 +5,11 @@ namespace App\Models;
 use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Stok extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $collection = 'stoks';
     protected $connection = 'mongodb';
     protected $fillable = [

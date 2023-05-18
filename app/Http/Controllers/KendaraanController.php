@@ -39,7 +39,6 @@ class KendaraanController extends Controller
     }
     public function destroy(Kendaraan $kendaraan)
     {
-        dd($kendaraan);
         return $this->kendaraanService->destroy($kendaraan);
     }
 }

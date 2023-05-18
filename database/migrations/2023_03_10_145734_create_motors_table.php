@@ -23,6 +23,7 @@ class CreateMotorsTable extends Migration
             $collection->string('tipe_suspensi');
             $collection->string('tipe_transmisi');
             $collection->timestamps();
+            $collection->timestamp('deleted_at')->nullable();
         });
     }
 

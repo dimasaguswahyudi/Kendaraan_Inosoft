@@ -23,6 +23,7 @@ class CreateMobilsTable extends Migration
             $collection->string('kapasitas_penumpang');
             $collection->string('tipe');
             $collection->timestamps();
+            $collection->timestamp('deleted_at')->nullable();
         });
     }
 
