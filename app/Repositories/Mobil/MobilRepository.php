@@ -31,5 +31,9 @@ class MobilRepository
         $data = $mobil->update($request);
         return $data;
     }
+    public function destroy($mobil)
+    {
+        return $mobil->delete();
+    }
 
 }

@@ -35,12 +35,6 @@ class KendaraanService
     }
     public function destroy($kendaraan)
     {
-        $data = $this->KendaraanRepository->destroy($kendaraan);
-        if ($data == true) {
-            return $this->ResReturn(true, "Data Berhasil Dihapus");
-        }
-        else{
-            return $this->ResReturn(false, "Data Gagal Dihapus");
-        }
+        return $this->KendaraanRepository->destroy($kendaraan);
     }
 }

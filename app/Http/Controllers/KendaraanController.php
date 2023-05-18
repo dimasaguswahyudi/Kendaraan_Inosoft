@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kendaraan;
 use Illuminate\Http\Request;
+use App\Traits\ReturnResponse;
 use Illuminate\Http\JsonResponse;
 use App\Http\Requests\KendaraanRequest;
 use App\Http\Resources\KendaraanResource;
-use App\Models\Kendaraan;
 use App\Services\Kendaraan\KendaraanService;
 
 class KendaraanController extends Controller
 {
+    use ReturnResponse;
     private KendaraanService $kendaraanService;
 
     public function __construct(KendaraanService $kendaraanService)
@@ -39,6 +41,11 @@ class KendaraanController extends Controller
     }
     public function destroy(Kendaraan $kendaraan)
     {
-        return $this->kendaraanService->destroy($kendaraan);
+        try {
+            $this->kendaraanService->destroy($kendaraan);
+            return $this->ResReturn(true, "Data Berhasil Dihapus");
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false, "Data Gagal Dihapus");
+        }
     }
 }

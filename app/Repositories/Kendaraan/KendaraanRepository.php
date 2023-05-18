@@ -45,11 +45,12 @@ class KendaraanRepository
     }
     public function destroy($kendaraan)
     {
-        try {
-            $data = $kendaraan->delete();
-            return true;
-        } catch (\Throwable $th) {
-            return false;
-        }
+         if ($kendaraan->mobil != null) {
+            $kendaraan->mobil->delete();
+         }
+         else if ($kendaraan->motor != null) {
+            $kendaraan->motor->delete();
+         }
+         return $kendaraan->delete();
     }
 }

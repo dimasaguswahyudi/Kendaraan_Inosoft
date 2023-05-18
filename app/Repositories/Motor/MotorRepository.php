@@ -32,5 +32,9 @@ class MotorRepository
         $data = $motor->update($request);
         return $data;
     }
+    public function destroy($motor)
+    {
+        return $motor->delete();
+    }
 
 }
