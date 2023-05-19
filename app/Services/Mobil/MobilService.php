@@ -52,7 +52,15 @@ class MobilService{
     }
     public function destroy($mobil)
     {
-        return $this->mobilRepository->destroy($mobil);
+        try {
+            if ($mobil->stok != null) {
+                $this->stokRepository->destroy($mobil->stok);
+            }
+            $this->mobilRepository->destroy($mobil);
+            return $this->ResReturn(true, "Mobil Berhasil Didelete");
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false, "Mobil Gagal Didelete");
+        }
     }
 }
 

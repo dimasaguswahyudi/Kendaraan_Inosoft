@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MobilRequest;
 use App\Http\Resources\MobilResource;
 use App\Models\Mobil;
+use App\Repositories\Stok\StokRepository;
 use App\Services\Mobil\MobilService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
