@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PenjualanRequest;
+use App\Http\Resources\PenjualanResource;
 use App\Models\Penjualan;
 use Illuminate\Http\JsonResponse;
 use App\Services\Penjualan\PenjualanService;
@@ -16,21 +17,20 @@ class PenjualanController extends Controller
         $this->penjualanService = $penjualanService;
     }
 
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json([
-            'data' => $this->penjualanService->getAllPenjualan()
-        ], 200);
+        $data = $this->penjualanService->index();
+        return PenjualanResource::collection($data);
     }
-    public function getPenjualan($kendaraan_id): JsonResponse
+    public function getPenjualan($kendaraan_id)
     {
-        return response()->json([
-            'data' => $this->penjualanService->getPenjualan($kendaraan_id)
-        ], 200);
+        $data = $this->penjualanService->getPenjualan($kendaraan_id);
+        return $data;
     }
-    public function store(PenjualanRequest $request): JsonResponse
+    public function store(PenjualanRequest $request)
     {
-        return $this->penjualanService->store($request->all());
+        $data = $this->penjualanService->store($request->all());
+        return $data;
     }
     public function update(PenjualanRequest $request, Penjualan $penjualan)
     {

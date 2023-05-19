@@ -18,7 +18,7 @@ class MotorRequest extends FormRequest
     {
         if (Route::is('motor.store')) {
             return [
-                'kendaraan_id' => 'required',
+                'kendaraan_id' => 'required|exists:kendaraans,_id',
                 'mesin' => 'required',
                 'tipe_suspensi' => 'required',
                 'tipe_transmisi' => 'required',

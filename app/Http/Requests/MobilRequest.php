@@ -19,7 +19,7 @@ class MobilRequest extends FormRequest
     {
         if (Route::is('mobil.store')) {
             return [
-                'kendaraan_id' => 'required',
+                'kendaraan_id' => 'required|exists:kendaraans,_id',
                 'mesin' => 'required',
                 'kapasitas_penumpang' => 'required',
                 'tipe' => 'required',

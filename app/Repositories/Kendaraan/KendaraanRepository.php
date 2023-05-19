@@ -24,6 +24,18 @@ class KendaraanRepository
         return $data;
     }
 
+    public function getPenjulan()
+    {
+        $data = $this->kendaraan::has('penjualan')->with('penjualan')->get();
+        return $data;
+    }
+
+    public function getPenjualanperKendaraan($kendaraan_id)
+    {
+        $data = $this->kendaraan->has('penjualan')->with('penjualan')->find($kendaraan_id);
+        return $data;
+    }
+
     public function index()
     {
         $data = $this->kendaraan->get();
