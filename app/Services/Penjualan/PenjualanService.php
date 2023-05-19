@@ -64,23 +64,45 @@ class PenjualanService{
     }
     public function update($request, $penjualan)
     {
-        // try {
-        //     $stok = $this->stokRepository->getStok($request)->toArray();
-        //     if ($request['jumlah'] > $stok['jumlah']) {
-        //         return $this->ResReturn(false, "Penjualan Barang Melebihi Stok");
-        //     }
-        //     else{
-        //         $return = $this->penjualanRepository->updatePenjualan($request, $penjualan);
-        //         $data = [
-        //             'id' => $stok['_id'],
-        //             'jumlah' => $stok['jumlah'] - $return['jumlah']
-        //         ];
-        //         $this->stokRepository->updateStok($data);
-        //         return $this->ResReturn(true,"Data Berhasil Diupdate");
-        //     }
-        // } catch (\Exception $ex) {
-        //     return $ex->getMessage();
-        // }
+        try {
+            $kendaraan = $penjualan->kendaraan;
+            if ($kendaraan != null) {
+                $stok = $kendaraan->mobil->stok ?? $kendaraan->motor->stok;
+                if ($stok != null) {
+                    if ($stok->jumlah >= $request['jumlah']) {
+                        $this->penjualanRepository->update($request, $penjualan);
+                        $data['id'] = $stok->id;
+                        $data['jumlah'] = $stok->jumlah - $request['jumlah'];
+                        $this->stokRepository->update($data);
+                        return $this->ResReturn(true,"Data Berhasil DiUpdate");
+                    }
+                    else{
+                        return $this->ResReturn(false,"Penjualan Melebihi Stok");
+                    }
+                }
+                else{
+                    return $this->ResReturn(false,"Kendaraan Tidak Memiliki Stok");
+                }
+            }
+            else{
+                return $this->ResReturn(false,"Kendaraan Tidak Memiliki Mobil/Motor/Stok");
+            }
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false,"Data Gagal DiUpdate");
+        }
+    }
+    public function destroy($penjualan)
+    {
+        try {
+            $stok = $penjualan->kendaraan->mobil->stok ?? $penjualan->kendaraan->motor->stok;
+            $data['id'] = $stok->id;
+            $data['jumlah'] = $stok->jumlah + $penjualan->jumlah;
+            $this->stokRepository->update($data);
+            $this->penjualanRepository->destroy($penjualan);
+            return $this->ResReturn(true,"Berhasil Menghapus Penjualan");
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false,"Gagal Menghapus Penjualan");
+        }
     }
 }
 

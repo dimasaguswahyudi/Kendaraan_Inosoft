@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class PenjualanRequest extends FormRequest
 {
@@ -15,10 +16,17 @@ class PenjualanRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'kendaraan_id' => 'required|exists:kendaraans,_id',
-            'jumlah' => 'required|numeric',
-        ];
+        if (Route::is('penjualan.store')) {
+            return [
+                'kendaraan_id' => 'required|exists:kendaraans,_id',
+                'jumlah' => 'required|numeric',
+            ];
+        }
+        else{
+            return [
+                'jumlah' => 'required|numeric',
+            ];
+        }
     }
 
     public function failedValidation(Validator $validator)
