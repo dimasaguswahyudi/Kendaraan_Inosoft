@@ -1,6 +1,6 @@
 Instalasi Laravel 8
 1. Tentukan Lokasi File
-2. Clone Project contoh: Git Clone "https://github.com/dimasaguswahyudi/Kendaraan.git"
+2. Clone Project contoh: Git Clone "https://github.com/dimasaguswahyudi/kendaraan_inosoft.git"
 3. Install Vendor pada project try: Composer Install
 4. Setting ENV seperti yang sudah disediakan pada file .env.example
 5. Generate JWT Auth try: php artisan jwt:secret
