@@ -26,10 +26,10 @@ class MobilRepository
         $data = $this->mobil->create($request);
         return $data;
     }
-    public function updateMobil($request, $mobil)
+    public function update($request, $mobil)
     {
-        $data = $mobil->update($request);
-        return $data;
+        $mobil->update($request);
+        return $mobil;
     }
     public function destroy($mobil)
     {

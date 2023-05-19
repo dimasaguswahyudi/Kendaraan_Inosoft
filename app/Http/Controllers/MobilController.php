@@ -30,9 +30,10 @@ class MobilController extends Controller
         return $data;
     }
 
-    public function update(MobilRequest $request, Mobil $mobil): JsonResponse
+    public function update(MobilRequest $request, Mobil $mobil)
     {
-        return $this->mobilService->updateMobil($request->all(), $mobil);
+        $data = $this->mobilService->update($request->all(), $mobil);
+        return $data;
     }
     public function destroy(Mobil $mobil)
     {

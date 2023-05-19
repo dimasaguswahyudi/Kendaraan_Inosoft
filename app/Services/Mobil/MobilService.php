@@ -39,10 +39,16 @@ class MobilService{
             return $this->ResReturn(false, "Data Gagal Dinput");
         }
     }
-    public function updateMobil($request, $mobil)
+    public function update($request, $mobil)
     {
-        $this->mobilRepository->updateMobil($request, $mobil);
-        return $this->ResReturn(true, "Data Berhasil Diupdate");
+        try {
+            $mobil = $this->mobilRepository->update($request, $mobil);
+            $request['id'] = $mobil->stok->id;
+            $this->stokRepository->update($request);
+            return $this->ResReturn(true, "Data Berhasil Diupdate");
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false, "Data Gagal Diupdate");
+        }
     }
     public function destroy($mobil)
     {
