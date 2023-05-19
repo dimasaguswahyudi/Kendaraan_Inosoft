@@ -44,4 +44,9 @@ class StokRepository
         ]);
         return $data;
     }
+    public function destroy($stok)
+    {
+        $stok->delete();
+        return $stok;
+    }
 }
