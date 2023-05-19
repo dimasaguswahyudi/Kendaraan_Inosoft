@@ -36,12 +36,8 @@ class MobilController extends Controller
     }
     public function destroy(Mobil $mobil)
     {
-        try {
-            $this->mobilService->destroy($mobil);
-            return $this->ResReturn(true, "Data Berhasil Dihapus");
-        } catch (\Throwable $th) {
-            return $this->ResReturn(false, "Data Gagal Dihapus");
-        }
+        $data = $this->mobilService->destroy($mobil);
+        return $data;
     }
 
 }
