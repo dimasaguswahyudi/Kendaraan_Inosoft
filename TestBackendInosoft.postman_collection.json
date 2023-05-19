@@ -3,11 +3,12 @@
 		"_postman_id": "769f598b-07bc-46f5-a1ac-9bbe20bc603e",
 		"name": "TestBackendInosoft",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "12563133"
+		"_exporter_id": "12563133",
+		"_collection_link": "https://grey-satellite-294218.postman.co/workspace/My-Workspace~6fab354e-b857-4aba-8f1c-b55b543543fb/collection/12563133-769f598b-07bc-46f5-a1ac-9bbe20bc603e?action=share&creator=12563133&source=collection_link"
 	},
 	"item": [
 		{
-			"name": "Login",
+			"name": "Masuk",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -16,7 +17,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "edd.moore@example.net",
+							"value": "lockman.ola@example.com",
 							"type": "text"
 						},
 						{
@@ -43,14 +44,14 @@
 			"response": []
 		},
 		{
-			"name": "Me",
+			"name": "Lihat Profil",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYyOTkxOSwiZXhwIjoxNjc4NjMzNTE5LCJuYmYiOjE2Nzg2Mjk5MTksImp0aSI6IlRURU8zWHZVV3pNMG9ocjAiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.yikRx07bwtmXKqd0cPBukd1NIctOR6BDVGYzS0_QYus",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQxMTE5NCwiZXhwIjoxNjg0NDE0Nzk0LCJuYmYiOjE2ODQ0MTExOTQsImp0aSI6IkV1dU02dXRHQ0hzNEFFWmkiLCJzdWIiOiI2NDY0ZWIwN2U2YzJmYTY1NWYwZThiOWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.YH2T4xzfoet4KbF0u_lzFRYYtdS4CVFBoBp14EO4324",
 							"type": "string"
 						}
 					]
@@ -74,7 +75,7 @@
 			"response": []
 		},
 		{
-			"name": "Logout",
+			"name": "Keluar",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -105,14 +106,14 @@
 			"response": []
 		},
 		{
-			"name": "getAllPenjualan",
+			"name": "Lihat Stok Kendaraan",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODU1NjkxNCwiZXhwIjoxNjc4NTYwNTE0LCJuYmYiOjE2Nzg1NTY5MTQsImp0aSI6Ijh5TTFsQnlLQUpCamhaelYiLCJzdWIiOiI2NDBiNWE0MTY5M2VlMjRkYjIwYTg5ZGIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.MAn1ucanzkfln8FDXgQ-T2C8eIGhuQGlTQ8io7xbFDA",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDMzNTQwMiwiZXhwIjoxNjg0MzM5MDAyLCJuYmYiOjE2ODQzMzU0MDIsImp0aSI6InJvbFN3S3cwMGlBelcwWnkiLCJzdWIiOiI2NDY0ZWIwN2U2YzJmYTY1NWYwZThiOWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.kpasqtOwWJzu6HF2MVDx-MGrBzR2w5oiOepUt2haxCg",
 							"type": "string"
 						}
 					]
@@ -120,7 +121,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/penjualan",
+					"raw": "http://localhost:8000/api/kendaraan/stok",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -128,197 +129,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"penjualan"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getPenjualanperkendaraan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYwMjIzMiwiZXhwIjoxNjc4NjA1ODMyLCJuYmYiOjE2Nzg2MDIyMzIsImp0aSI6Ik00MFJmYVpFWDVQZnlLN2wiLCJzdWIiOiI2NDBiNWE0MTY5M2VlMjRkYjIwYTg5ZGIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DIPk_dz0VKa9UAVnC2jdam4zyQhrn0BZQnwDIm32jRw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/getpenjualan/640b5a41693ee24db20a89e4",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"getpenjualan",
-						"640b5a41693ee24db20a89e4"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create/Store Penjualan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzMjgwNCwiZXhwIjoxNjc4NjM2NDA0LCJuYmYiOjE2Nzg2MzI4MDQsImp0aSI6IkRhaTFXaDVpUkUzeURaRVgiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.U4NcAlusHB780tLSEne7XnlNyourgP6pUduRoY0litQ",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "kendaraan_id",
-							"value": "640ddb8c2254a18c97088544",
-							"type": "text"
-						},
-						{
-							"key": "jumlah",
-							"value": "101",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/penjualan",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"penjualan"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Penjualan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzNzQ3NiwiZXhwIjoxNjc4NjQxMDc2LCJuYmYiOjE2Nzg2Mzc0NzYsImp0aSI6InlhTEpjQkgwVnlsSWh0ajAiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.lxoJ1QMdR9vuySf3Cwih_5Yj8xReNE7b_cUUijF4cQA",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"kendaraan_id\" : \"640ddb8c2254a18c97088544\",\r\n    \"jumlah\" : 187\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/penjualan/640ddb8c2254a18c97088580",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"penjualan",
-						"640ddb8c2254a18c97088580"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getStok",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODU1NjkxNCwiZXhwIjoxNjc4NTYwNTE0LCJuYmYiOjE2Nzg1NTY5MTQsImp0aSI6Ijh5TTFsQnlLQUpCamhaelYiLCJzdWIiOiI2NDBiNWE0MTY5M2VlMjRkYjIwYTg5ZGIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.MAn1ucanzkfln8FDXgQ-T2C8eIGhuQGlTQ8io7xbFDA",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/stok",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"stok"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Tambah/Update stok",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzMjgwNCwiZXhwIjoxNjc4NjM2NDA0LCJuYmYiOjE2Nzg2MzI4MDQsImp0aSI6IkRhaTFXaDVpUkUzeURaRVgiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.U4NcAlusHB780tLSEne7XnlNyourgP6pUduRoY0litQ",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "kendaraan_id",
-							"value": "640ddb8c2254a18c97088544",
-							"type": "text"
-						},
-						{
-							"key": "jumlah",
-							"value": "1001",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/stok",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
+						"kendaraan",
 						"stok"
 					]
 				}
@@ -353,7 +164,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzMjgwNCwiZXhwIjoxNjc4NjM2NDA0LCJuYmYiOjE2Nzg2MzI4MDQsImp0aSI6IkRhaTFXaDVpUkUzeURaRVgiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.U4NcAlusHB780tLSEne7XnlNyourgP6pUduRoY0litQ",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ2Njg1OSwiZXhwIjoxNjg0NDcwNDU5LCJuYmYiOjE2ODQ0NjY4NTksImp0aSI6IkpSMXI4cnFacXdiYnBySEwiLCJzdWIiOiI2NDY2MmFhMjA1ZjIxMDQxMjUwMjgyM2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.TsXN3EjPaR1Zjo_P374xYBlACdbllkxtJQPvBD1r45g",
 							"type": "string"
 						}
 					]
@@ -365,17 +176,17 @@
 					"formdata": [
 						{
 							"key": "tahun_keluaran",
-							"value": "2024",
+							"value": "2070",
 							"type": "text"
 						},
 						{
 							"key": "warna",
-							"value": "Blue Yellow",
+							"value": "Blue Yellow Cuy",
 							"type": "text"
 						},
 						{
 							"key": "harga",
-							"value": "1000000",
+							"value": "120000",
 							"type": "text"
 						}
 					]
@@ -403,7 +214,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODU5ODE4OCwiZXhwIjoxNjc4NjAxNzg4LCJuYmYiOjE2Nzg1OTgxODgsImp0aSI6IjhiTTU2bHBsSjRtWVpmVTUiLCJzdWIiOiI2NDBiNWE0MTY5M2VlMjRkYjIwYTg5ZGIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jaguwe6cf3Ne0NYuVQMZzWfUXOPSU2lhaJb_NPle7JY",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQxMzU5NCwiZXhwIjoxNjg0NDE3MTk0LCJuYmYiOjE2ODQ0MTM1OTQsImp0aSI6IkdpSzlXUEFPR3hQSHM0WjQiLCJzdWIiOiI2NDY0ZWIwN2U2YzJmYTY1NWYwZThiOWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4zR-RlV3yoX-R0lUt2qTA44v0h8v_9kbs_yT2mIm4hM",
 							"type": "string"
 						}
 					]
@@ -412,7 +223,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"tahun_keluaran\" : 2001,\r\n    \"warna\" : \"Biru Unyuk\",\r\n    \"harga\" : 1245333\r\n}",
+					"raw": "{\r\n    \"tahun_keluaran\" : 2030,\r\n    \"warna\" : \"Biru Unyuk Masss Pur\",\r\n    \"harga\" : 5212512321\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -420,7 +231,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/kendaraan/640ddb8c2254a18c97088544",
+					"raw": "http://localhost:8000/api/kendaraan/6466249eeff899ce220ccc04",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -429,7 +240,38 @@
 					"path": [
 						"api",
 						"kendaraan",
-						"640ddb8c2254a18c97088544"
+						"6466249eeff899ce220ccc04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hapus Kendaraan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ3OTM4NywiZXhwIjoxNjg0NDgyOTg3LCJuYmYiOjE2ODQ0NzkzODcsImp0aSI6InpWQ3lOMVV3NGhDZGhMNDMiLCJzdWIiOiI2NDY2MmFhMjA1ZjIxMDQxMjUwMjgyM2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.vJ7uwlUrubcDlS92Vz6q0htGFpw1i1_LEjJ71j7m2sI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/kendaraan/6466f19621f70d4b460df642",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"kendaraan",
+						"6466f19621f70d4b460df642"
 					]
 				}
 			},
@@ -438,6 +280,16 @@
 		{
 			"name": "Lihat Semua Mobil",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ2Njg1OSwiZXhwIjoxNjg0NDcwNDU5LCJuYmYiOjE2ODQ0NjY4NTksImp0aSI6IkpSMXI4cnFacXdiYnBySEwiLCJzdWIiOiI2NDY2MmFhMjA1ZjIxMDQxMjUwMjgyM2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.TsXN3EjPaR1Zjo_P374xYBlACdbllkxtJQPvBD1r45g",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -463,7 +315,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzMzYxMywiZXhwIjoxNjc4NjM3MjEzLCJuYmYiOjE2Nzg2MzM2MTMsImp0aSI6ImtqZWVhWEdwTjhtcWxYTjMiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.X-aU020I0jauTiHsWaMQs0-o5uCfdiVUOr1epSumpuw",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ2Njg1OSwiZXhwIjoxNjg0NDcwNDU5LCJuYmYiOjE2ODQ0NjY4NTksImp0aSI6IkpSMXI4cnFacXdiYnBySEwiLCJzdWIiOiI2NDY2MmFhMjA1ZjIxMDQxMjUwMjgyM2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.TsXN3EjPaR1Zjo_P374xYBlACdbllkxtJQPvBD1r45g",
 							"type": "string"
 						}
 					]
@@ -475,7 +327,7 @@
 					"formdata": [
 						{
 							"key": "kendaraan_id",
-							"value": "640de9d96ea87f83620d9b85",
+							"value": "6466e07b2b760000ca0041f2",
 							"type": "text"
 						},
 						{
@@ -491,6 +343,11 @@
 						{
 							"key": "tipe",
 							"value": "t7266",
+							"type": "text"
+						},
+						{
+							"key": "jumlah",
+							"value": "200",
 							"type": "text"
 						}
 					]
@@ -518,7 +375,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzMzYxMywiZXhwIjoxNjc4NjM3MjEzLCJuYmYiOjE2Nzg2MzM2MTMsImp0aSI6ImtqZWVhWEdwTjhtcWxYTjMiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.X-aU020I0jauTiHsWaMQs0-o5uCfdiVUOr1epSumpuw",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ2Njg1OSwiZXhwIjoxNjg0NDcwNDU5LCJuYmYiOjE2ODQ0NjY4NTksImp0aSI6IkpSMXI4cnFacXdiYnBySEwiLCJzdWIiOiI2NDY2MmFhMjA1ZjIxMDQxMjUwMjgyM2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.TsXN3EjPaR1Zjo_P374xYBlACdbllkxtJQPvBD1r45g",
 							"type": "string"
 						}
 					]
@@ -527,7 +384,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"kendaraan_id\" : \"640de9d96ea87f83620d9b85\",\r\n    \"mesin\" : \"M877SU\",\r\n    \"kapasitas_penumpang\" : 130,\r\n    \"tipe\" : \"T6255\"\r\n}",
+					"raw": "{\r\n    \"mesin\" : \"M877SU\",\r\n    \"kapasitas_penumpang\" : 131,\r\n    \"tipe\" : \"T6255\",\r\n    \"jumlah\" : 201\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -535,7 +392,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/mobil/640deae46ea87f83620d9b86",
+					"raw": "http://localhost:8000/api/mobil/6466f03621f70d4b460df640",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -544,7 +401,38 @@
 					"path": [
 						"api",
 						"mobil",
-						"640deae46ea87f83620d9b86"
+						"6466f03621f70d4b460df640"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hapus Mobil",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ4MzIwNSwiZXhwIjoxNjg0NDg2ODA1LCJuYmYiOjE2ODQ0ODMyMDUsImp0aSI6ImJWTmFyeGNWRkYzY1JKeEMiLCJzdWIiOiI2NDY3MmM2NmQzNDRiNjVjYTkwNGI4OWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.NK8I8YlhqSvnkscEH4X5b4dNDIzyT8ZaRgQg-1VrbU0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/mobil/64672c66d344b65ca904b8d0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"mobil",
+						"64672c66d344b65ca904b8d0"
 					]
 				}
 			},
@@ -558,7 +446,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzMzYxMywiZXhwIjoxNjc4NjM3MjEzLCJuYmYiOjE2Nzg2MzM2MTMsImp0aSI6ImtqZWVhWEdwTjhtcWxYTjMiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.X-aU020I0jauTiHsWaMQs0-o5uCfdiVUOr1epSumpuw",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ4MzIwNSwiZXhwIjoxNjg0NDg2ODA1LCJuYmYiOjE2ODQ0ODMyMDUsImp0aSI6ImJWTmFyeGNWRkYzY1JKeEMiLCJzdWIiOiI2NDY3MmM2NmQzNDRiNjVjYTkwNGI4OWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.NK8I8YlhqSvnkscEH4X5b4dNDIzyT8ZaRgQg-1VrbU0",
 							"type": "string"
 						}
 					]
@@ -643,7 +531,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYzMzYxMywiZXhwIjoxNjc4NjM3MjEzLCJuYmYiOjE2Nzg2MzM2MTMsImp0aSI6ImtqZWVhWEdwTjhtcWxYTjMiLCJzdWIiOiI2NDBkZGI4YzIyNTRhMThjOTcwODg1M2EiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.X-aU020I0jauTiHsWaMQs0-o5uCfdiVUOr1epSumpuw",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ4MzIwNSwiZXhwIjoxNjg0NDg2ODA1LCJuYmYiOjE2ODQ0ODMyMDUsImp0aSI6ImJWTmFyeGNWRkYzY1JKeEMiLCJzdWIiOiI2NDY3MmM2NmQzNDRiNjVjYTkwNGI4OWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.NK8I8YlhqSvnkscEH4X5b4dNDIzyT8ZaRgQg-1VrbU0",
 							"type": "string"
 						}
 					]
@@ -652,7 +540,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"kendaraan_id\" : \"640ddb8c2254a18c97088561\",\r\n    \"mesin\" : \"M6276\",\r\n    \"tipe_suspensi\" : \"T72626\",\r\n    \"tipe_transmisi\" : \"T7dsda\"\r\n}",
+					"raw": "{\r\n    \"mesin\" : \"M6276\",\r\n    \"tipe_suspensi\" : \"Dimas Ganteng\",\r\n    \"tipe_transmisi\" : \"T7dsda\",\r\n    \"jumlah\" : 1234\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -660,7 +548,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/motor/640ddb8c2254a18c9708857f",
+					"raw": "http://localhost:8000/api/motor/64672c66d344b65ca904b8df",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -669,7 +557,205 @@
 					"path": [
 						"api",
 						"motor",
-						"640ddb8c2254a18c9708857f"
+						"64672c66d344b65ca904b8df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hapus Motor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ4MzIwNSwiZXhwIjoxNjg0NDg2ODA1LCJuYmYiOjE2ODQ0ODMyMDUsImp0aSI6ImJWTmFyeGNWRkYzY1JKeEMiLCJzdWIiOiI2NDY3MmM2NmQzNDRiNjVjYTkwNGI4OWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.NK8I8YlhqSvnkscEH4X5b4dNDIzyT8ZaRgQg-1VrbU0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/motor/64672c66d344b65ca904b8df",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"motor",
+						"64672c66d344b65ca904b8df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lihat Semua Penjualan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ5MjQ0MSwiZXhwIjoxNjg0NDk2MDQxLCJuYmYiOjE2ODQ0OTI0NDEsImp0aSI6IlhpU0x3dEo4bGs3b250cmYiLCJzdWIiOiI2NDY3NTA4MjA0MWM3YTgyYWQwNjk4OGEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ogoOrjY0bTlps8w1QUUhTHIqQ5sDCdgJ2E4dF7UYuk4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/penjualan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"penjualan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lihat Penjulan Per Kendaraan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3ODYwMjIzMiwiZXhwIjoxNjc4NjA1ODMyLCJuYmYiOjE2Nzg2MDIyMzIsImp0aSI6Ik00MFJmYVpFWDVQZnlLN2wiLCJzdWIiOiI2NDBiNWE0MTY5M2VlMjRkYjIwYTg5ZGIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DIPk_dz0VKa9UAVnC2jdam4zyQhrn0BZQnwDIm32jRw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/getpenjualan/640b5a41693ee24db20a89e4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getpenjualan",
+						"640b5a41693ee24db20a89e4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tambah Penjualan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ5MjQ0MSwiZXhwIjoxNjg0NDk2MDQxLCJuYmYiOjE2ODQ0OTI0NDEsImp0aSI6IlhpU0x3dEo4bGs3b250cmYiLCJzdWIiOiI2NDY3NTA4MjA0MWM3YTgyYWQwNjk4OGEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ogoOrjY0bTlps8w1QUUhTHIqQ5sDCdgJ2E4dF7UYuk4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "kendaraan_id",
+							"value": "64675082041c7a82ad0698b1",
+							"type": "text"
+						},
+						{
+							"key": "jumlah",
+							"value": "1002",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/penjualan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"penjualan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Penjualan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY4NDQ5NTM1NCwiZXhwIjoxNjg0NDk4OTU0LCJuYmYiOjE2ODQ0OTUzNTQsImp0aSI6IkxjSGRvRHc3TUh5T1RYVWgiLCJzdWIiOiI2NDY3NWJiNDNkMDI3Y2UwZWEwYTk5NWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.HPI9SnJZLSpTYB4KL3c3da8XPWtyvfJFFAGUK5s0GrU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jumlah\" : 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/penjualan/64675cc5fa5c76ff700e553d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"penjualan",
+						"64675cc5fa5c76ff700e553d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hapus Penjualan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/penjualan/64676123fa5c76ff700e553e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"penjualan",
+						"64676123fa5c76ff700e553e"
 					]
 				}
 			},
