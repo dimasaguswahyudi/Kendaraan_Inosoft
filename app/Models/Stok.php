@@ -13,7 +13,7 @@ class Stok extends Model
     protected $collection = 'stoks';
     protected $connection = 'mongodb';
     protected $fillable = [
-        'kendaraan_id', 'jumlah'
+        'mobil_id', 'motor_id' ,'jumlah'
     ];
 
 

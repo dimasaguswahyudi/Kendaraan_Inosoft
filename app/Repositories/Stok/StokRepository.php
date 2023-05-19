@@ -28,9 +28,13 @@ class StokRepository
         $data = $this->stok->with('mobil', 'motor')->get();
         return $data;
     }
-    public function createStok($request)
+    public function create($request)
     {
-        $data = $this->stok->create($request);
+        $data = $this->stok->create([
+            'mobil_id' => $request['mobil_id'] ?? null,
+            'motor_id' => $request['motor_id'] ?? null,
+            'jumlah' => $request['jumlah'],
+        ]);
         return $data;
     }
     public function updateStok($request)

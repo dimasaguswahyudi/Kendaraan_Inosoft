@@ -27,7 +27,7 @@ class MobilController extends Controller
     public function store(MobilRequest $request)
     {
         $data = $this->mobilService->store($request->all());
-        return MobilResource::make($data);
+        return $data;
     }
 
     public function update(MobilRequest $request, Mobil $mobil): JsonResponse

@@ -21,6 +21,7 @@ class MobilRequest extends FormRequest
             'mesin' => 'required',
             'kapasitas_penumpang' => 'required',
             'tipe' => 'required',
+            'jumlah' => 'required|numeric'
         ];
     }
 

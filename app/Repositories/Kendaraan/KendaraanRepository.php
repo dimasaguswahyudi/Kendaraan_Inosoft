@@ -30,6 +30,12 @@ class KendaraanRepository
         return $data;
     }
 
+    public function find($request)
+    {
+        $data = $this->kendaraan->orDoesntHave('mobil')->DoesntHave('motor')->find($request);
+        return $data;
+    }
+
     public function store($request)
     {
         $data = $this->kendaraan->create($request);
