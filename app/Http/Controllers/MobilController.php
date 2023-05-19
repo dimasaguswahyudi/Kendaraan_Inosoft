@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MobilRequest;
+use App\Http\Resources\MobilResource;
 use App\Models\Mobil;
+use App\Repositories\Stok\StokRepository;
 use App\Services\Mobil\MobilService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -17,21 +19,27 @@ class MobilController extends Controller
         $this->mobilService = $mobilService;
     }
 
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json([
-            'data' => $this->mobilService->getAllMobil()
-        ], 200);
+        $data = $this->mobilService->index();
+        return MobilResource::collection($data);
     }
 
-    public function store(MobilRequest $request): JsonResponse
+    public function store(MobilRequest $request)
     {
-        return $this->mobilService->createMobil($request->all());
+        $data = $this->mobilService->store($request->all());
+        return $data;
     }
 
-    public function update(MobilRequest $request, Mobil $mobil): JsonResponse
+    public function update(MobilRequest $request, Mobil $mobil)
     {
-        return $this->mobilService->updateMobil($request->all(), $mobil);
+        $data = $this->mobilService->update($request->all(), $mobil);
+        return $data;
+    }
+    public function destroy(Mobil $mobil)
+    {
+        $data = $this->mobilService->destroy($mobil);
+        return $data;
     }
 
 }

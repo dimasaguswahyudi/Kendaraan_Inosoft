@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Support\Facades\Route;
 
 class MobilRequest extends FormRequest
 {
@@ -16,12 +17,23 @@ class MobilRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'kendaraan_id' => 'required|exists:kendaraans,_id',
-            'mesin' => 'required',
-            'kapasitas_penumpang' => 'required',
-            'tipe' => 'required',
-        ];
+        if (Route::is('mobil.store')) {
+            return [
+                'kendaraan_id' => 'required',
+                'mesin' => 'required',
+                'kapasitas_penumpang' => 'required',
+                'tipe' => 'required',
+                'jumlah' => 'required|numeric'
+            ];
+        }
+        else{
+            return [
+                'mesin' => 'required',
+                'kapasitas_penumpang' => 'required',
+                'tipe' => 'required',
+                'jumlah' => 'required|numeric'
+            ];
+        }
     }
 
     public function failedValidation(Validator $validator)

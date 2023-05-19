@@ -35,9 +35,7 @@ class PenjualanRepository
     }
     public function updatePenjualan($request, $penjualan)
     {
-        $penjualan->kendaraan_id = $request['kendaraan_id'];
-        $penjualan->jumlah = $request['jumlah'];
-        $penjualan->save();
+        $penjualan->update($request);
         return $penjualan;
     }
 }

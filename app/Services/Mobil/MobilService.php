@@ -2,29 +2,65 @@
 
 namespace App\Services\Mobil;
 
+use App\Repositories\Kendaraan\KendaraanRepository;
 use App\Repositories\Mobil\MobilRepository;
+use App\Repositories\Stok\StokRepository;
 use App\Traits\ReturnResponse;
 
 class MobilService{
     use ReturnResponse;
     private MobilRepository $mobilRepository;
-    public function __construct(MobilRepository $mobilRepository)
+    private KendaraanRepository $kendaraanRepository;
+    private StokRepository $stokRepository;
+    public function __construct(MobilRepository $mobilRepository, KendaraanRepository $kendaraanRepository, StokRepository $stokRepository)
     {
         $this->mobilRepository = $mobilRepository;
+        $this->kendaraanRepository = $kendaraanRepository;
+        $this->stokRepository = $stokRepository;
     }
-    public function getAllMobil()
+    public function index()
     {
-        return $this->mobilRepository->getAllMobil();
+        return $this->mobilRepository->index();
     }
-    public function createMobil($request)
+    public function store($request)
     {
-        $this->mobilRepository->createMobil($request);
-        return $this->ResReturn(true, "Data Berhasil Ditambah");
+        try {
+            $kendaraan = $this->kendaraanRepository->find($request['kendaraan_id']);
+            if ($kendaraan != null) {
+                $mobil = $this->mobilRepository->store($request);
+                $request['mobil_id'] = $mobil->id;
+                $this->stokRepository->create($request);
+                return $this->ResReturn(true, "Mobil Berhasil Diinput");
+            }
+            else{
+                return $this->ResReturn(false, "Kendaraan Sudah Memiliki Mobil/Motor");
+            }
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false, "Data Gagal Dinput");
+        }
     }
-    public function updateMobil($request, $mobil)
+    public function update($request, $mobil)
     {
-        $this->mobilRepository->updateMobil($request, $mobil);
-        return $this->ResReturn(true, "Data Berhasil Diupdate");
+        try {
+            $mobil = $this->mobilRepository->update($request, $mobil);
+            $request['id'] = $mobil->stok->id;
+            $this->stokRepository->update($request);
+            return $this->ResReturn(true, "Data Berhasil Diupdate");
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false, "Data Gagal Diupdate");
+        }
+    }
+    public function destroy($mobil)
+    {
+        try {
+            if ($mobil->stok != null) {
+                $this->stokRepository->destroy($mobil->stok);
+            }
+            $this->mobilRepository->destroy($mobil);
+            return $this->ResReturn(true, "Mobil Berhasil Didelete");
+        } catch (\Throwable $th) {
+            return $this->ResReturn(false, "Mobil Gagal Didelete");
+        }
     }
 }
 
