@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Support\Facades\Route;
 
 class MotorRequest extends FormRequest
 {
@@ -15,12 +16,23 @@ class MotorRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'kendaraan_id' => 'required|exists:kendaraans,_id',
-            'mesin' => 'required',
-            'tipe_suspensi' => 'required',
-            'tipe_transmisi' => 'required',
-        ];
+        if (Route::is('motor.store')) {
+            return [
+                'kendaraan_id' => 'required|exists:kendaraans,_id',
+                'mesin' => 'required',
+                'tipe_suspensi' => 'required',
+                'tipe_transmisi' => 'required',
+                'jumlah' => 'required|numeric'
+            ];
+        }
+        else{
+            return [
+                'mesin' => 'required',
+                'tipe_suspensi' => 'required',
+                'tipe_transmisi' => 'required',
+                'jumlah' => 'required|numeric'
+            ];
+        }
     }
     public function failedValidation(Validator $validator)
     {

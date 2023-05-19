@@ -30,13 +30,12 @@ Route::group([
 });
 
 Route::middleware(['auth:api'])->group(function () {
-    Route::get('getpenjualan/{kendaraan_id}', [PenjualanController::class, 'getPenjualan']);
+    Route::get('getpenjualan/{kendaraan_id}', [PenjualanController::class, 'getPenjualan'])->name('penjualan.getpenjualan');
     Route::get('kendaraan/stok',[KendaraanController::class, 'getstok'])->name('kendaraan.stok');
     Route::apiResources([
         'kendaraan' => KendaraanController::class,
         'mobil' => MobilController::class,
         'motor' => MotorController::class,
         'penjualan' => PenjualanController::class,
-        'stok' => StokController::class,
     ]);
 });

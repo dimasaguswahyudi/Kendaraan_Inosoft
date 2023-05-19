@@ -19,23 +19,24 @@ class PenjualanRepository
         $this->penjualan = $penjualan;
     }
 
-    public function getAllPenjualan()
+    public function index()
     {
-        return $this->penjualan->with('kendaraan')->get();
+        $data = $this->penjualan->with('kendaraan')->get();
+        return $data;
     }
-    public function getPenjualan($kendaraan_id)
-    {
-        $penjualan = $this->penjualan->with('kendaraan.mobil', 'kendaraan.motor')->where('kendaraan_id', $kendaraan_id)->get();
-        return $penjualan;
-    }
+
     public function store($request)
     {
         $data = $this->penjualan->create($request);
         return $data;
     }
-    public function updatePenjualan($request, $penjualan)
+    public function update($request, $penjualan)
     {
         $penjualan->update($request);
         return $penjualan;
+    }
+    public function destroy($penjualan)
+    {
+        return $penjualan->delete();
     }
 }
