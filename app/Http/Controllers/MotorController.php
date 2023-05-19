@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MotorRequest;
+use App\Http\Resources\MotorResource;
 use App\Models\Motor;
 use App\Services\Motor\MotorService;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -11,25 +12,31 @@ class MotorController extends Controller
 {
     private MotorService $motorService;
 
-    public function __construct(motorService $motorService)
+    public function __construct(MotorService $motorService)
     {
         $this->motorService = $motorService;
     }
 
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json([
-            'data' => $this->motorService->getAllMotor()
-        ], 200);
+        $data = $this->motorService->index();
+        return MotorResource::collection($data);
     }
 
-    public function store(MotorRequest $request): JsonResponse
+    public function store(MotorRequest $request)
     {
-        return $this->motorService->createMotor($request->all());
+        $data = $this->motorService->store($request->all());
+        return $data;
     }
 
-    public function update(MotorRequest $request, Motor $motor): JsonResponse
+    public function update(MotorRequest $request, Motor $motor)
     {
-        return $this->motorService->updateMotor($request->all(), $motor);
+        $data = $this->motorService->update($request->all(), $motor);
+        return $data;
+    }
+    public function destroy(Motor $motor)
+    {
+        $data = $this->motorService->destroy($motor);
+        return $data;
     }
 }

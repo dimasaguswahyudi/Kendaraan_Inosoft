@@ -17,20 +17,20 @@ class MotorRepository
         $this->motor = $motor;
     }
 
-    public function getAllMotor()
+    public function index()
     {
         $data = $this->motor->get();
         return $data;
     }
-    public function createMotor($request)
+    public function store($request)
     {
         $data = $this->motor->create($request);
         return $data;
     }
-    public function updateMotor($request, Motor $motor)
+    public function update($request, Motor $motor)
     {
-        $data = $motor->update($request);
-        return $data;
+        $motor->update($request);
+        return $motor;
     }
     public function destroy($motor)
     {
