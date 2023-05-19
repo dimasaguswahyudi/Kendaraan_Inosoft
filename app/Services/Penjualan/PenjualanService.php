@@ -12,11 +12,13 @@ class PenjualanService{
     use ReturnResponse;
     private PenjualanRepository $penjualanRepository;
     private KendaraanRepository $kendaraanRepository;
+    private StokRepository $stokRepository;
 
-    public function __construct(PenjualanRepository $penjualanRepository, KendaraanRepository $kendaraanRepository)
+    public function __construct(PenjualanRepository $penjualanRepository, KendaraanRepository $kendaraanRepository, StokRepository $stokRepository)
     {
         $this->penjualanRepository = $penjualanRepository;
         $this->kendaraanRepository = $kendaraanRepository;
+        $this->stokRepository = $stokRepository;
     }
 
     public function index()
@@ -34,19 +36,33 @@ class PenjualanService{
     public function store($request)
     {
         try {
-            $kendaraan = $this->kendaraanRepository->find($request['kendaraan_id']);
+            $kendaraan = $this->kendaraanRepository->hasStok($request['kendaraan_id']);
             if ($kendaraan != null) {
-                $this->penjualanRepository->store($request);
-                return $this->ResReturn(true,"Data Berhasil DiInput");
+                $stok = $kendaraan->mobil->stok ?? $kendaraan->motor->stok;
+                if ($stok != null) {
+                    if ($stok->jumlah >= $request['jumlah']) {
+                        $this->penjualanRepository->store($request);
+                        $data['id'] = $stok->id;
+                        $data['jumlah'] = $stok->jumlah - $request['jumlah'];
+                        $this->stokRepository->update($data);
+                        return $this->ResReturn(true,"Data Berhasil DiInput");
+                    }
+                    else{
+                        return $this->ResReturn(false,"Penjualan Melebihi Stok");
+                    }
+                }
+                else{
+                    return $this->ResReturn(false,"Kendaraan Tidak Memiliki Stok");
+                }
             }
             else{
-                return $this->ResReturn(false,"Kendaraan Tidak Memiliki Mobil/Motor");
+                return $this->ResReturn(false,"Kendaraan Tidak Memiliki Mobil/Motor/Stok");
             }
         } catch (\Throwable $th) {
             return $this->ResReturn(false,"Data Gagal DiInput");
         }
     }
-    public function updatePenjualan($request, $penjualan)
+    public function update($request, $penjualan)
     {
         // try {
         //     $stok = $this->stokRepository->getStok($request)->toArray();

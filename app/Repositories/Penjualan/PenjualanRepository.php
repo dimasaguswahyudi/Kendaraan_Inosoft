@@ -30,9 +30,13 @@ class PenjualanRepository
         $data = $this->penjualan->create($request);
         return $data;
     }
-    public function updatePenjualan($request, $penjualan)
+    public function update($request, $penjualan)
     {
         $penjualan->update($request);
         return $penjualan;
+    }
+    public function destroy($penjualan)
+    {
+        return $penjualan->delete();
     }
 }

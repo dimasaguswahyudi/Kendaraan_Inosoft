@@ -48,6 +48,12 @@ class KendaraanRepository
         return $data;
     }
 
+    public function hasStok($request)
+    {
+        $data = $this->kendaraan->has('mobil')->orHas('motor')->find($request);
+        return $data;
+    }
+
     public function store($request)
     {
         $data = $this->kendaraan->create($request);
@@ -55,10 +61,7 @@ class KendaraanRepository
     }
     public function update($request, $kendaraan)
     {
-        $kendaraan->tahun_keluaran = $request['tahun_keluaran'];
-        $kendaraan->warna = $request['warna'];
-        $kendaraan->harga = $request['harga'];
-        $kendaraan->save();
+        $kendaraan->update($request);
         return $kendaraan;
     }
     public function destroy($kendaraan)
