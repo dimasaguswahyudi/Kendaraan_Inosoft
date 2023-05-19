@@ -34,75 +34,86 @@ Setting Token Terlebih dahulu
 3. Pilih Type "Bearer Token"
 4. Paste Token
 
-4. Lihat Semua Penjualan
-    4.A Http Request: http://localhost:8000/api/penjualan
+4. Lihat Stok Kendaraan
+    4.A Http Request: http://localhost:8000/api/kendaraan/stok
     4.B Method GET
     4.C Run
-5. Lihat Penjualan Per Kendaraan
-    5.A Http Request: http://localhost:8000/api/getpenjualan/{kendaraan_id}
+5. Lihat Semua Kendaraan
+    5.A Http Request: http://localhost:8000/api/kendaraan
     5.B Method GET
     5.C Run
-6. Create Penjualan (store)
-    6.A Http Request: http://localhost:8000/api/penjualan
+6. Tambah Kendaraan
+    6.A Http Request: http://localhost:8000/api/kendaraan
     6.B Method POST
-    6.C Body field "kendaraan_id, jumlah"
+    6.C Body field "tahun_keluaran, warna, harga"
     6.D Run
-7. Update Penjualan (update)
-    7.A Http Request: http://localhost:8000/api/penjualan/{penjualan_id}
+7. Update Kendaraan
+    7.A Http Request: http://localhost:8000/api/kendaraan/{kendaraan_id}
     7.B Method PUT
-    7.C Json Response "kendaraan_id, jumlah"
+    7.C Json Response "tahun_keluaran, warna, harga"
     7.D Run
-8. Lihat Stok
-    8.A Http Request: http://localhost:8000/api/stok
-    8.B Method GET
+8. Hapus Kendaraan
+    8.A Http Request: http://localhost:8000/api/kendaraan/{kendaraan_id}
+    8.B Method DELETE
     8.C Run
-9. Tambah/Update Stok
-    9.A Http Request: http://localhost:8000/api/stok
-    9.B Method POST
-    9.C Body field "kendaraan_id, jumlah"
-    9.D Run
-10. Lihat Semua Kendaraan
-    10.A Http Request: http://localhost:8000/api/kendaraan
-    10.B Method GET
+9. Lihat Semua Mobil
+    9.A Http Request: http://localhost:8000/api/mobil
+    9.B Method GET
+    9.C Run
+10. Tambah Mobil
+    10.A Http Request: http://localhost:8000/api/mobil
+    10.B Method POST
+    10.C Body field "kendaraan_id, mesin, kapasitas_penumpang, tipe, jumlah"
     10.C Run
-11. Tambah Kendaraan
-    11.A Http Request: http://localhost:8000/api/kendaraan
-    11.B Method POST
-    11.C Body field "tahun_keluaran, warna, harga"
+11. Update Mobil
+    11.A Http Request: http://localhost:8000/api/mobil/{mobil_id}
+    11.B Method PUS
+    11.C Json Response "mesin, kapasitas_penumpang, tipe, jumlah"
     11.D Run
-12. Update Kendaraan
-    12.A Http Request: http://localhost:8000/api/kendaraan/{kendaraan_id}
-    11.B Method PUT
-    11.C Json Response "tahun_keluaran, warna, harga"
+12. Hapus Mobil
+    12.A Http Request: http://localhost:8000/api/mobil/{mobil_id}
+    11.B Method DELETE
     11.D Run
-13. Lihat Semua Mobil
-    13.A Http Request: http://localhost:8000/api/mobil
+13. Lihat Semua Motor
+    13.A Http Request: http://localhost:8000/api/motor
     13.B Method GET
     13.C Run
-14. Tambah Mobil
-    14.A Http Request: http://localhost:8000/api/mobil
+14. Tambah Motor
+    14.A Http Request: http://localhost:8000/api/motor
     14.B Method POST
-    14.C Body field "kendaraan_id, mesin, kapasitas_penumpang, tipe"
+    14.C Body field "kendaraan_id, mesin, tipe_suspensi, tipe_transmisi, jumlah"
     14.D Run
-15. Update Mobil
-    15.A Http Request: http://localhost:8000/api/mobil/{mobil_id}
+15. Update Motor
+    15.A Http Request: http://localhost:8000/api/motor/{motor_id}
     15.B Method PUT
-    15.C Json Response "kendaraan_id, mesin, kapasitas_penumpang, tipe"
+    15.C Json Response "mesin, tipe_suspensi, tipe_transmisi, jumlah"
     15.D Run
-16. Lihat Semua motor
-    16.A Http Request: http://localhost:8000/api/motor
-    16.B Method GET
+16. Hapus Motor
+    16.A Http Request: http://localhost:8000/api/motor/{motor_id}
+    16.B Method DELETE
     16.C Run
-17. Tambah motor
-    17.A Http Request: http://localhost:8000/api/motor
-    17.B Method POST
-    17.C Body field "kendaraan_id, mesin, tipe_suspensi, tipe_transmisi"
-    17.D Run
-18. Update motor
-    18.A Http Request: http://localhost:8000/api/motor/{motor_id}
-    18.B Method PUT
-    18.C Json Response "kendaraan_id, mesin, tipe_suspensi, tipe_transmisi"
-    18.D Run
+17. Lihat Semua Penjualan
+    17.A Http Request: http://localhost:8000/api/penjualan
+    17.B Method GET
+    17.C Run
+18. Lihat Penjualan Per Kendaraan
+    18.A Http Request: http://localhost:8000/api/getpenjualan/{kendaraan_id}
+    18.B Method GET
+    18.C Run
+19. Tambah penjualan
+    19.A Http Request: http://localhost:8000/api/penjualan
+    19.B Method POST
+    19.C Body field "kendaraan_id, jumlah"
+    19.D Run
+20. Update Penjualan
+    20.A Http Request: http://localhost:8000/api/penjualan/{penjualan_id}
+    20.B Method PUT
+    20.C Json Response "jumlah"
+    20.D Run
+21. Hapus Motor
+    21.A Http Request: http://localhost:8000/api/penjualan/{penjualan_id}
+    21.B Method DELETE
+    21.C Run
 
 Running Test Case
 1. php artisan test

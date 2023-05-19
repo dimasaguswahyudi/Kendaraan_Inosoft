@@ -34,6 +34,12 @@ class PenjualanController extends Controller
     }
     public function update(PenjualanRequest $request, Penjualan $penjualan)
     {
-        return $this->penjualanService->updatePenjualan($request->all(), $penjualan);
+        $data = $this->penjualanService->update($request->all(), $penjualan);
+        return $data;
+    }
+    public function destroy(Penjualan $penjualan)
+    {
+       $data = $this->penjualanService->destroy($penjualan);
+       return $data;
     }
 }
